@@ -7,16 +7,20 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          passPerPreset: true,
-          presets: ['react', 'es2015', 'stage-1']
-        }
-      }
-    ]
+		{
+	        test: /\.js$/,
+	        exclude: /node_modules/,
+	        loader: 'babel-loader',
+	        query: {
+	          passPerPreset: true,
+	          presets: ['react', 'es2015', 'stage-1']
+	        }
+		},
+		{
+		  test: /\.(jpg|png)$/,
+		  loader: 'url-loader'
+		}
+	]
   },
   node: {
     fs: 'empty',
